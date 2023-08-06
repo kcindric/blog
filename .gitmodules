@@ -1,0 +1,4 @@
+[submodule "kcindric-blog/public"]
+	path = kcindric-blog/public
+	url = https://github.com/kcindric/kcindric.github.io.git
+	branch = main

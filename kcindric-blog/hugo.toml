@@ -1,0 +1,24 @@
+baseURL = 'https://kcindric.github.io/'
+languageCode = 'en-us'
+title = 'kcindric homepage'
+theme = "nightfall"
+
+[params]
+author = "kcindric"
+user = "kcindric"
+hostname = "kcindric.me"
+footerHtml = 'Built with <a href="https://gohugo.io" class="footerLink">Hugo</a>'
+
+[menu]
+  [[menu.header]]
+    name = "posts"
+    weight = 0
+    url = "/posts"
+  [[menu.header]]
+    name = "projects"
+    weight = 1
+    url = "/projects"
+  [[menu.header]]
+    name = "about"
+    weight = 2
+    url = "/about"
