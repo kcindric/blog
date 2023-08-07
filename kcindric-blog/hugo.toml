@@ -1,4 +1,4 @@
-baseURL = 'https://kcindric.me/'
+baseURL = 'https://www.kcindric.me/'
 languageCode = 'en-us'
 title = 'kcindric homepage'
 theme = "nightfall"
