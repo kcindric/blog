@@ -16,5 +16,9 @@ select * from film where title like '%darkness%' or title like '%war%'
 ```
 
 The result:
-
-![sql results 1](sql-results-1.png)
+{{< rawhtml >}}
+<p align="center">
+  <img src="images/sql-results-1.png" width="300"/>
+</p>
+<p style="text-align: center;">11 rows, 300 msec</p>
+{{< /rawhtml >}}
