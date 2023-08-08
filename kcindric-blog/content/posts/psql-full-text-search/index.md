@@ -1,4 +1,5 @@
 ---
+tags: #sql
 title: "PostgreSQL Full Text Search"
 date: 2023-08-06T12:59:46+02:00
 draft: false
@@ -14,7 +15,6 @@ Let's say we have a movie called "Darkness War" and we want to search it. The fi
 ```SQL
 select * from film where title like '%darkness%' or title like '%war%'
 ```
-
 The result:
 {{< rawhtml >}}
 <p align="center">

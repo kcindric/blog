@@ -1,24 +1,61 @@
 baseURL = 'https://www.kcindric.me/'
 languageCode = 'en-us'
-title = 'kcindric homepage'
-theme = "nightfall"
+title = 'kcindric'
+theme = "hello-friend-ng"
+paginate = 10
 
 [params]
-author = "kcindric"
-user = "kcindric"
-hostname = "kcindric.me"
-footerHtml = 'Built with <a href="https://gohugo.io" class="footerLink">Hugo</a>'
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
+  logo.logoText = "kcindric@kcindric.me ~ $"
+  logo.logoHomeLink = "/"
+  logo.logoCursorColor = "#609fd8"
 
-[menu]
-  [[menu.header]]
-    name = "posts"
-    weight = 0
-    url = "/posts"
-  [[menu.header]]
-    name = "projects"
-    weight = 1
-    url = "/projects"
-  [[menu.header]]
-    name = "about"
-    weight = 2
-    url = "/about"
+  # Subtitle for home
+  homeSubtitle = "Hello there, my name is Kristijan Cindrić. Welcome to my blog!"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Enable sharing buttons, if you like
+  enableSharingButtons = false
+  
+  # Show a global language switcher in the navigation bar
+  enableGlobalLanguageMenu = false
+  
+  [[params.social]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/kcindric/"
+  [[params.social]]
+  name = "github"
+  url = "https://github.com/kcindric"
+  [[params.social]]
+  name = "email"
+  url = "mailto:kcindric@gmail.com"
+
+[params.portrait]
+  path     = "images/portrait.png"
+  alt      = "Portrait"
+  maxWidth = "200px"
+
+
+
+[taxonomies]
+    category = "blog"
+    tag      = "tags"
+    series   = "series"
+
+  [[menu.main]]
+    identifier = "posts"
+    name       = "~/posts"
+    url        = "/posts"
+  [[menu.main]]
+    identifier = "about"
+    name       = "~/about"
+    url        = "/about"
+  [[menu.main]]
+    identifier = "projects"
+    name       = "~/projects"
+    url        = "/projects"
