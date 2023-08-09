@@ -1,4 +1,4 @@
-## Hey there,
+## Hey there :wave:,
 
 I'm Kristijan and I'm... I'm not sure exactly what to be honest.
 I'm a software developer by trade and have been for 4 years now. I **love** to code, built my own website using Adobe Dreamweaver in the early 2000's and since then didn't stop hacking stuff on my computer. 
