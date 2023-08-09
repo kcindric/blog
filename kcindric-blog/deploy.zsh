@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# This line sets the variable 'filename' to the first argument passed to the script
+# This line sets the commit message from the passed argument
 commit_message=$1
 
 # build hugo blog with theme defined in hugo.toml
