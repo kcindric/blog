@@ -55,7 +55,3 @@ paginate = 10
     identifier = "about"
     name       = "~/about"
     url        = "/about"
-  [[menu.main]]
-    identifier = "projects"
-    name       = "~/projects"
-    url        = "/projects"

@@ -87,7 +87,7 @@ where to_tsvector(title) @@ to_tsquery('darkness');
 <p style="text-align: center;">20 rows, 400 ms</p>
 {{< /rawhtml >}}
 
-Let's try and expand our query and find "Darkness Wars":
+Let's try and expand our query and find "Darkness War":
 
 ```SQL
 select title, ts_rank(to_tsvector(title), to_tsquery('darkness war')) as rank
