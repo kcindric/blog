@@ -22,7 +22,7 @@ The result:
 <p align="center">
   <img src="images/sql-results-1.png" width="300"/>
 </p>
-<p style="text-align: center;">11 rows, 300 ms</p>
+<p style="text-align: center;">11 rows</p>
 {{< /rawhtml >}}
 
 11 results, but we're missing our desired title - the reason is that `LIKE` is case sensitive. To fix that, let's use `ILIKE`:
@@ -35,7 +35,7 @@ select * from film where title ilike '%darkness%' or title ilike '%war%'
 <p align="center">
   <img src="images/sql-results-2.png" width="300"/>
 </p>
-<p style="text-align: center;">20 rows, 500 ms</p>
+<p style="text-align: center;">20 rows</p>
 {{< /rawhtml >}}
 
 Now we got our wanted result, but the list seems un-ordered and we miss a ranking system which of the results is a better match to our search query.
@@ -86,7 +86,7 @@ where to_tsvector(title) @@ to_tsquery('darkness');
 <p align="center">
   <img src="images/sql-results-5.png" width="300"/>
 </p>
-<p style="text-align: center;">20 rows, 400 ms</p>
+<p style="text-align: center;">20 rows</p>
 {{< /rawhtml >}}
 
 Let's try and expand our query and find "Darkness War":
@@ -120,7 +120,7 @@ where to_tsvector(title) @@ websearch_to_tsquery('darkness war');
 <p align="center">
   <img src="images/sql-results-7.png" width="300"/>
 </p>
-<p style="text-align: center;">1 result, 60ms</p>
+<p style="text-align: center;">1 result</p>
 {{< /rawhtml >}}
 
 `websearch_to_tsquery` is a really powerful function and it's the function I personally like to use the most when using PostgreSQL as my full text search engine. It supports operators inside the query text:
@@ -142,7 +142,7 @@ where to_tsvector(title) @@ websearch_to_tsquery('"darkness" -war');
 <p align="center">
   <img src="images/sql-results-8.png" width="300"/>
 </p>
-<p style="text-align: center;">1 result, 100ms</p>
+<p style="text-align: center;">1 result</p>
 {{< /rawhtml >}}
 
 ## What next?
