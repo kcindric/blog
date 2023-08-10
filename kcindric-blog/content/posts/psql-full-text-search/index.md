@@ -3,6 +3,8 @@ tags: #sql
 title: "PostgreSQL Full Text Search"
 date: 2023-08-06T12:59:46+02:00
 draft: false
+tags:
+  - software
 ---
 
 Let's say we are building an app for searching movies in our private collection. Our app, for simplicity, can only search movies using movie titles. In the following examples we'll show a few different approaches how to do a full text search using PostgreSQL.
