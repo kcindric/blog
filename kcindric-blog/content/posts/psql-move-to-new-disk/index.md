@@ -43,10 +43,10 @@ PostgreSQL installation comes with a handy app called `pg_ctl` which we can run 
 To register our new service we need to run the following command where you substitute `postgresql-x64-12-new-service` with your desired service name and `F:/psql:/data` with the new path of your migrated `data` folder:
 
 ```cmd
-"pg_ctl register -N postgresql-x64-12-new-service -D "F:/psql/data"
+pg_ctl register -N postgresql-x64-12-new-service -D "F:/psql/data"
 ```
 
-What I usually do next is test was my migration and creation of the new PostgreSQL service successful is rename the old `data` folder to something like `data_old`. Then I start my new service, if it's not already started, and try to connect to my PosgreSQL server and query a database. If all went well this should work seamlessly.
+What I usually do next is test was my migration and creation of the new PostgreSQL service successful by renameing the old `data` folder to something like `data_old`. Then I start my new service, if it's not already started, and try to connect to my PosgreSQL server and query a database. If all went well this should work seamlessly.
 
 ## Deleting the old service
 After testing that the migration went well we need to delete the old service by running the next command and including the name of the old service:
