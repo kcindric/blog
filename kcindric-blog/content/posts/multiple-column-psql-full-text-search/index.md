@@ -6,7 +6,7 @@ draft: false
 tags:
   - software
 ---
-In [Part 1](/posts/psql-full-text-search/) about full text search using PostgreSQL, we talked about using functions such as `to_tsquery` and `websearch_to_tsquery`, which builds upon PostgreSQL ability to decompose longer sentences to smaller chunks called *lexemes* using `tsquery`.
+In [Part 1](/posts/psql-full-text-search/) of this tutorial about full text search using PostgreSQL, we talked about using functions such as `to_tsquery` and `websearch_to_tsquery`, which builds upon PostgreSQL ability to decompose longer sentences to smaller chunks called *lexemes* using `tsquery`.
 
 Now we're going to expand our knowledge and implement multi-column full text search and add indexes for a more performant search. In this next step we want to search film titles AND film descriptions using our `dvdrental` database. In the stock database multi-column indexed search is already implemented but we're going to scrap that for the sake of this tutorial:
 
@@ -18,7 +18,7 @@ drop index idx_fulltext;
 alter table film drop column fulltext;
 ```
 
-## Creating a combined `tsvector` column
+## Creating a combined tsvector column
 Doing a full text search through multiple columns is easy as combining the `to_tsvector` results of wanted columns into one concatenated result:
 
 ```SQL

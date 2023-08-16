@@ -11,7 +11,7 @@ Let's say we are building an app for searching movies in our private collection.
 
 In this tutorial we're going to use the sample database called "dvdrental" which can be found [here](https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/).
 
-## Full Text Search using `LIKE` and `ILIKE` operators
+## Full Text Search using LIKE and ILIKE operators
 Let's say we have a movie called "Darkness War" and we want to search it. The first, most easiest, and the least optimized way would be using the `LIKE` operator and wrapping individual words in `%` characters:
 
 ```SQL
@@ -40,7 +40,7 @@ select * from film where title ilike '%darkness%' or title ilike '%war%'
 
 Now we got our wanted result, but the list seems un-ordered and we miss a ranking system which of the results is a better match to our search query.
 
-## Enter `tsvector`
+## Enter tsvector
 So this is the star of the tutorial. PostgreSQL documentation states the following:
 > A `tsvector` value is a sorted list of distinct lexemes, which are words that have been normalized to merge different variants of the same word.
 
