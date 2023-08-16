@@ -58,7 +58,7 @@ generated always as	(
 ) stored;
 ```
 
-Note the added `simple` value in our `to_tsvector` function. We add this because PostgreSQL throws an exception if we explicitly define the 'regional configuration' or a dictionary which will be used for deriving lexemes. Other options are `english`, `spanish` etc. Read more about that in the official PostgreSQL documentation.
+Note the added `simple` value in our `to_tsvector` function. We add this because PostgreSQL throws an exception if we explicitly don't define the 'regional configuration' or a dictionary which will be used for deriving lexemes. Other options are `english`, `spanish` etc. Read more about that in the official PostgreSQL documentation.
 
 Now we can easily search through both of our columns, giving priority to the `title` column using `websearch_to_tsquery`:
 
@@ -86,7 +86,7 @@ When we do a `ANALYZE EXPLAIN` we can see that the PostgreSQL query profiler is 
 <p style="text-align: center;">Profiler is not happy</p>
 {{< /rawhtml >}}
 
-To optimize this query we can add an idex to our `fulltext` column. The most optimized index for a `tsvector` data type is called `GIN` and the following query will create one:
+To optimize this query we can add an index to our `fulltext` column. The most optimized index for a `tsvector` data type is called `GIN` and the following query will create one:
 
 ```SQL
 CREATE INDEX search_fulltext ON film USING GIN(fulltext);
