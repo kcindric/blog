@@ -79,7 +79,8 @@ To utilize `to_tsvector` in our full text search engine we're going to use two a
 ```SQL
 select title, ts_rank(to_tsvector(title), to_tsquery('darkness')) as rank
 from film
-where to_tsvector(title) @@ to_tsquery('darkness');
+where to_tsvector(title) @@ to_tsquery('darkness')
+order by rank desc;
 ```
 
 {{< rawhtml >}}
@@ -94,7 +95,8 @@ Let's try and expand our query and find "Darkness War":
 ```SQL
 select title, ts_rank(to_tsvector(title), to_tsquery('darkness war')) as rank
 from film
-where to_tsvector(title) @@ to_tsquery('darkness war');
+where to_tsvector(title) @@ to_tsquery('darkness war')
+order by rank desc;
 ```
 {{< rawhtml >}}
 <p align="center">
@@ -113,7 +115,8 @@ The solution? `websearch_to_tsquery` function:
 ```SQL
 select title, ts_rank(to_tsvector(title), websearch_to_tsquery('darkness war')) as rank
 from film
-where to_tsvector(title) @@ websearch_to_tsquery('darkness war');
+where to_tsvector(title) @@ websearch_to_tsquery('darkness war')
+order by rank desc;
 ```
 
 {{< rawhtml >}}
@@ -135,7 +138,8 @@ This can be utilized greatly to expand your search engine. For example, let's se
 ```SQL
 select title, ts_rank(to_tsvector(title), websearch_to_tsquery('"darkness" -war')) as rank
 from film
-where to_tsvector(title) @@ websearch_to_tsquery('"darkness" -war');
+where to_tsvector(title) @@ websearch_to_tsquery('"darkness" -war')
+order by rank desc;
 ```
 
 {{< rawhtml >}}
@@ -146,4 +150,4 @@ where to_tsvector(title) @@ websearch_to_tsquery('"darkness" -war');
 {{< /rawhtml >}}
 
 ## What next?
-In the upcoming Part 2 we'll cover indexes and full text search through multiple columns. After doing that, in Part 3 we're going to cover how to quickly create an REST api on top of our database using [PostgREST](https://postgrest.org/) and perform our full text search from a client app.
+In [Part 2](/posts/multiple-column-psql-full-text-search/) we cover indexes and full text search through multiple columns. After doing that, in Part 3 we're going to cover how to quickly create an REST api on top of our database using [PostgREST](https://postgrest.org/) and perform our full text search from a client app.
