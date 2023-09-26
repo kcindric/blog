@@ -1,6 +1,6 @@
 ---
 title: ".NET Background service with a queue"
-date: 2023-09-26T15:00:00+02:00
+date: 2023-09-26T12:00:00+02:00
 draft: false
 toc: false
 images:
